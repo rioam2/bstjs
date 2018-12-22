@@ -1,0 +1,18 @@
+{
+  "name": "bstjs",
+  "version": "1.0.0",
+  "description": "Basic Dictionary ADT implementation using a Binary-Search-Tree (BST) in Javascript",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./index.js"
+  },
+  "keywords": [
+    "BST",
+    "binary",
+    "search",
+    "tree",
+    "dictionary"
+  ],
+  "author": "rioam2",
+  "license": "MIT"
+}
