@@ -119,18 +119,12 @@ export class BST {
                 removalNode.value = iop.value;
                 /* Remove node now at position of IOP: */
                 if (iop.right !== null && iop.left !== null) {
-                    if (iop.right.key !== null) {
+                    if (iop.left.key !== null) {
                         /* One child removal on IOP (left) */
                         iop.key = iop.left.key;
                         iop.value = iop.left.value;
                         iop.right = iop.left.right;
                         iop.left = iop.left.left;
-                    } else if (iop.left.key !== null) {
-                        /* One child removal on IOP (right) */
-                        iop.key = iop.right.key;
-                        iop.value = iop.right.value;
-                        iop.left = iop.right.left;
-                        iop.right = iop.right.right;
                     } else {
                         /* No child removal on IOP */
                         iop.key = null;
@@ -167,7 +161,7 @@ export class BST {
      */
     public levelOrderTraversal() {
         const traversal: any = [];
-        /* Queue for storing nodes to visit in traversal */
+        /* Queue for storing nodes to visit the in traversal */
         const queue: BSTNode[] = [this.root];
         /* Check if there are still nodes to process */
         while (queue.length !== 0) {
@@ -183,8 +177,58 @@ export class BST {
         return traversal;
     };
 
+    /**
+     * Returns an array of values in a pre-order traversal
+     * of the binary-search-tree.
+     */
     public preOrderTraversal() {
+        const traversal: any = [];
+        /* Recursive depth-first-search lambda for traversing */
+        const dfs = (subRoot: BSTNode) => {
+            if (subRoot.left !== null && subRoot.right !== null) {
+                traversal.push(subRoot.value);
+                if (subRoot.left.key !== null) dfs(subRoot.left);
+                if (subRoot.right.key !== null) dfs(subRoot.right);
+            }
+        }
+        dfs(this.root);
+        return traversal;
+    };
 
+    /**
+     * Returns an array of values in an in-order traversal
+     * of the binary-search-tree.
+     */
+    public inOrderTraversal() {
+        const traversal: any = [];
+        /* Recursive depth-first-search lambda for traversing */
+        const dfs = (subRoot: BSTNode) => {
+            if (subRoot.left !== null && subRoot.right !== null) {
+                if (subRoot.left.key !== null) dfs(subRoot.left);
+                traversal.push(subRoot.value);
+                if (subRoot.right.key !== null) dfs(subRoot.right);
+            }
+        }
+        dfs(this.root);
+        return traversal;
+    };
+
+    /**
+     * Returns an array of values in a post-order traversal
+     * of the binary-search-tree.
+     */
+    public postOrderTraversal() {
+        const traversal: any = [];
+        /* Recursive depth-first-search lambda for traversing */
+        const dfs = (subRoot: BSTNode) => {
+            if (subRoot.left !== null && subRoot.right !== null) {
+                if (subRoot.left.key !== null) dfs(subRoot.left);
+                if (subRoot.right.key !== null) dfs(subRoot.right);
+                traversal.push(subRoot.value);
+            }
+        }
+        dfs(this.root);
+        return traversal;
     };
 
     /**
