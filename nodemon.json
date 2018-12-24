@@ -5,5 +5,5 @@
         "test"
     ],
     "ext": "ts,js",
-    "exec": "npm test"
+    "exec": "npm run-script test"
 }
