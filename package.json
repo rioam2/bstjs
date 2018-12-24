@@ -1,5 +1,5 @@
 {
-  "name": "bstjs",
+  "name": "@rioam2/bstjs",
   "version": "1.0.0",
   "description": "Basic Dictionary ADT implementation using a Binary-Search-Tree (BST) in Javascript",
   "keywords": [
