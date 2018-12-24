@@ -5,5 +5,5 @@
         "test"
     ],
     "ext": "ts,js",
-    "exec": "yarn build && yarn testOnce"
+    "exec": "npm test"
 }

@@ -16,7 +16,7 @@
   "scripts": {
     "build": "tsc",
     "testWatch": "nodemon",
-    "test": "./node_modules/mocha/bin/mocha --reporter spec"
+    "test": "npm build && mocha --reporter spec"
   },
   "repository": {
     "type": "git",
