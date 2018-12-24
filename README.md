@@ -9,7 +9,7 @@
 
 BSTjs is an npm package for Node.JS that implements the Dictionary ADT using a Binary Search Tree (BST) data structure. The codebase is written in TypeScript with ES6 features which is transpiled to ES5 for compatibility.
 
-For more information on implementation, please read my development article on Medium here: [Implementation Details]()
+For more information on implementation, please read my development article on Medium here: [Implementation Details](https://medium.com/rio-martinez/how-to-build-a-binary-search-tree-in-javascript-with-es6-classes-any-why-d14cee13d6f7)
 
 ## Todo
 
