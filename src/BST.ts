@@ -32,7 +32,7 @@ export class BST {
     /**
      * Creates a new BST object.
      */
-    constructor() {
+    public constructor() {
         /* Stores the root node of the tree */
         this.root = new BSTNode(null, null);
 
@@ -76,7 +76,7 @@ export class BST {
      * @param key Key of data to insert (must be comparable primitive)
      * @param value Data to insert
      */
-    insert(key: any, value: any) {
+    public insert(key: any, value: any) {
         /* Find insertion point and update key/value of Node 
            accordingly: */
         const insertionNode = this.findNode(this.root, key);
@@ -96,14 +96,14 @@ export class BST {
      * key. Returns NULL if no such key is present.
      * @param key Key associated with data to retrieve
      */
-    get(key: any) {
+    public get(key: any) {
         return this.findNode(this.root, key).value;
     };
 
     /**
      * Removes data with supplied key from the BST.
      */
-    remove(key: any) {
+    public remove(key: any) {
         const removalNode = this.findNode(this.root, key);
         if (removalNode.key === null) return; /* does not exist */
         const hasLeftChild = removalNode.left !== null && removalNode.left.key !== null;
@@ -165,7 +165,7 @@ export class BST {
      * Returns an array of values in a level-order traversal
      * of the binary-search-tree.
      */
-    levelOrderTraversal() {
+    public levelOrderTraversal() {
         const traversal: any = [];
         /* Queue for storing nodes to visit in traversal */
         const queue: BSTNode[] = [this.root];
@@ -183,11 +183,15 @@ export class BST {
         return traversal;
     };
 
+    public preOrderTraversal() {
+
+    };
+
     /**
      * Returns true if no data is in the BST, and false
      * if the structure stores data.
      */
-    isEmpty() {
+    public isEmpty() {
         return this.root.key === null;
     };
 };
