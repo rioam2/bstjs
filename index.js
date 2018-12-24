@@ -11,10 +11,10 @@ tree.insert('Ruby', 'Ruby is a dynamic, interpreted, reflective, object-oriented
 tree.insert('Haskell', 'Haskell is a standardized, general-purpose, purely functional programming language with non-strict semantics and strong static typing.');
 
 /* Remove C++ */
-tree.remove('C++');
+tree.remove('NodeJS');
 
 /* Get the definition of NodeJS */
-console.log(`\nNodeJS Definition: ${tree.find('NodeJS')}\n`);
+console.log(`\nNodeJS Definition: ${tree.get('NodeJS')}\n`);
 
 /* Pretty-print the tree to the console: */
 console.log(`\nTree: ${JSON.stringify(tree, null, 2)}\n`);
