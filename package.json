@@ -2,17 +2,24 @@
   "name": "bstjs",
   "version": "1.0.0",
   "description": "Basic Dictionary ADT implementation using a Binary-Search-Tree (BST) in Javascript",
+  "keywords": [
+    "binary search tree",
+    "dictionary",
+    "bst",
+    "bstjs",
+    "tree",
+    "AVL tree",
+    "search",
+    "search tree"
+  ],
   "main": "index.js",
   "scripts": {
     "start": "node ./index.js"
   },
-  "keywords": [
-    "BST",
-    "binary",
-    "search",
-    "tree",
-    "dictionary"
-  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rioam2/bstjs"
+  },
   "author": "rioam2",
   "license": "MIT"
 }
