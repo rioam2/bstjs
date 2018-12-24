@@ -29,7 +29,9 @@ class BSTNode {
 export class BST {
     private root: BSTNode;
 
-    /* Creates a new BST object. */
+    /**
+     * Creates a new BST object.
+     */
     constructor() {
         /* Stores the root node of the tree */
         this.root = new BSTNode(null, null);
@@ -45,11 +47,15 @@ export class BST {
         this.levelOrderTraversal.bind(this);
     };
 
-    /* Internal helper function used to traverse the tree
-       and return the node with the key specified. If the
-       key does not exist in the tree, the node where the 
-       key would be is returned. */
-    public findNode(subRoot: BSTNode, key: any): BSTNode {
+    /**
+     * Internal helper function used to traverse the tree
+     * and return the node with the key specified. If the
+     * key does not exist in the tree, the node where the
+     * key would be is returned.
+     * @param subRoot Recursive head of subtree to process
+     * @param key Key to find in tree
+     */
+    private findNode(subRoot: BSTNode, key: any): BSTNode {
         if (subRoot.key === null || subRoot.key === key) {
             /* If we reach an empty node, this will be our
                insertion point, or if the key is what we are
@@ -65,7 +71,11 @@ export class BST {
         }
     };
 
-    /* Inserts a new key/value pair into the BST. */
+    /**
+     * Inserts a new key/value pair into the BST.
+     * @param key Key of data to insert (must be comparable primitive)
+     * @param value Data to insert
+     */
     insert(key: any, value: any) {
         /* Find insertion point and update key/value of Node 
            accordingly: */
@@ -81,13 +91,18 @@ export class BST {
 
     };
 
-    /* Finds the data associated with the supplied 
-       key. Returns NULL if no such key is present. */
+    /**
+     * Gets the data associated with the supplied
+     * key. Returns NULL if no such key is present.
+     * @param key Key associated with data to retrieve
+     */
     get(key: any) {
         return this.findNode(this.root, key).value;
     };
 
-    /* Removes data with supplied key from the BST. */
+    /**
+     * Removes data with supplied key from the BST.
+     */
     remove(key: any) {
         const removalNode = this.findNode(this.root, key);
         if (removalNode.key === null) return; /* does not exist */
@@ -146,6 +161,10 @@ export class BST {
         }
     };
 
+    /**
+     * Returns an array of values in a level-order traversal
+     * of the binary-search-tree.
+     */
     levelOrderTraversal() {
         const traversal: any = [];
         /* Queue for storing nodes to visit in traversal */
@@ -164,8 +183,10 @@ export class BST {
         return traversal;
     };
 
-    /* Returns true if no data is in the BST, and false
-       if the structure stores data. */
+    /**
+     * Returns true if no data is in the BST, and false
+     * if the structure stores data.
+     */
     isEmpty() {
         return this.root.key === null;
     };
