@@ -42,6 +42,7 @@ export class BST {
         this.get.bind(this);
         this.remove.bind(this);
         this.isEmpty.bind(this);
+        this.levelOrderTraversal.bind(this);
     };
 
     /* Internal helper function used to traverse the tree
@@ -143,6 +144,24 @@ export class BST {
                 removalNode.right = null;
             }
         }
+    };
+
+    levelOrderTraversal() {
+        const traversal: any = [];
+        /* Queue for storing nodes to visit in traversal */
+        const queue: BSTNode[] = [this.root];
+        /* Check if there are still nodes to process */
+        while (queue.length !== 0) {
+            /* Process current node in traversal */
+            const node = queue[0];
+            traversal.push((queue.shift() as BSTNode).value);
+            /* Process all valid children */
+            if (node.left !== null && node.right !== null) {
+                if (node.left.key !== null) queue.push(node.left);
+                if (node.right.key !== null) queue.push(node.right);
+            }
+        }
+        return traversal;
     };
 
     /* Returns true if no data is in the BST, and false
